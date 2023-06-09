@@ -32,24 +32,30 @@ public class Main {
         //Update this
 
         List<Customer> customer = new ArrayList<>();
+
+
         // loop through customer data, in each string array, use the set functions to make the single customer
         // Check in customer data if the customer exists already.
-        for (int i = 0; i < customerData.size(); i++) {
-            int id = Integer.parseInt(customerData.get(i)[0]); // Get the ID
-            String name = customerData.get(i)[1]; // Get the name
+        for (String[] cd : customerData) {
+            int id = Integer.parseInt(cd[0]); // Get the ID
+            String name = cd[1]; // Get the name
 
             Customer c = new Customer(id, name);
+
 
             if(!customer.contains(c)){
                 customer.add(c);
             }
         }
 
-        for (int i = 0; i < customerData.size(); i++) {
-            int id = Integer.parseInt(customerData.get(i)[0]); // Get the ID
+        List<Customer> cc = customer.stream().distinct().collect(
+                Collectors.toList());
+        System.out.println(cc);
+        for (String[] cd : customerData) { // Use enhanced for loop
+            int id = Integer.parseInt(cd[0]); // Get the ID
             //int charge = Integer.parseInt(customerData.get(i)[2]);
-            int charge = Integer.valueOf(customerData.get(i)[2]);
-            String chargeDate = customerData.get(i)[3];
+            int charge = Integer.valueOf(cd[2]);
+            String chargeDate = cd[3];
 
             AccountRecord a = new AccountRecord();
             a.setCharge(charge);
@@ -64,8 +70,6 @@ public class Main {
             }
         }
 
-
-        System.out.println(customer);
         // customer.getBalance() => check the balance
         String positive = "", negative = "";
         for (Customer c : customer){
@@ -78,5 +82,7 @@ public class Main {
         }
         System.out.println("Positive accounts:" + positive );
         System.out.println("Negative accounts:" + negative);
+
+
     }
 }

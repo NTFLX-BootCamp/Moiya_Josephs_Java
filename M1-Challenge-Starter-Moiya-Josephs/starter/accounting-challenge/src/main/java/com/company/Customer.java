@@ -17,6 +17,12 @@ public class Customer {
         this.name =name;
     }
 
+    Customer(int id, String name, List<AccountRecord> charges){
+        this.id = id;
+        this.name =name;
+        this.charges = charges;
+    }
+
     public int getId() {
         return id;
     }
