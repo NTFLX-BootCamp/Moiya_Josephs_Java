@@ -24,21 +24,21 @@ In the starter code, you will find a partially completed application that contai
 
 Requirements:
 
-* Update the `main()` method in the `Main` class.
+[x] Update the `main()` method in the `Main` class.
 
-* Iterate through a `List<String[]>` that contains multiple records for each `Customer`, converting it into `List<Customer>` where there is only one copy of each customer (`Integer.parseInt()` converts a `String` to an integer).
+[x] Iterate through a `List<String[]>` that contains multiple records for each `Customer`, converting it into `List<Customer>` where there is only one copy of each customer (`Integer.parseInt()` converts a `String` to an integer).
 
-* Update the `getBalance()` method in the `Customer` class to sum all charges.
+[x] Update the `getBalance()` method in the `Customer` class to sum all charges.
 
-* Update the `toString()` method in the `Customer` class to print the customer ID, customer name, and customer balance.
+[x] Update the `toString()` method in the `Customer` class to print the customer ID, customer name, and customer balance.
 
-* Add JUnit test cases to test your newly added `getBalance()` and `toString()` functionality.
+[x] Add JUnit test cases to test your newly added `getBalance()` and `toString()` functionality.
 
 You must also complete the following user stories:
 
-* As a user, I would like to access a list of all accounts that are positive. (Use `System.out.println`.)
+[x] As a user, I would like to access a list of all accounts that are positive. (Use `System.out.println`.)
 
-* As a user, I would like to access a list of all accounts that are negative. (Use `System.out.println`.)
+[x] As a user, I would like to access a list of all accounts that are negative. (Use `System.out.println`.)
 
 ## 4. Submission
 
