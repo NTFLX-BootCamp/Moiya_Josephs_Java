@@ -1,10 +1,8 @@
 package com.company;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -48,9 +46,6 @@ public class Main {
             }
         }
 
-        List<Customer> cc = customer.stream().distinct().collect(
-                Collectors.toList());
-        System.out.println(cc);
         for (String[] cd : customerData) { // Use enhanced for loop
             int id = Integer.parseInt(cd[0]); // Get the ID
             //int charge = Integer.parseInt(customerData.get(i)[2]);
@@ -70,18 +65,12 @@ public class Main {
             }
         }
 
-        // customer.getBalance() => check the balance
-        String positive = "", negative = "";
-        for (Customer c : customer){
-            if(c.getBalance() > 0){
-                 positive += " " + c.getName();
-            }
-            else {
-                 negative += " " + c.getName();
-            }
-        }
-        System.out.println("Positive accounts:" + positive );
-        System.out.println("Negative accounts:" + negative);
+
+        System.out.println("Positive accounts:");
+        customer.stream().filter(c -> c.getBalance() > 0).forEach(System.out::println);
+        System.out.println("Negative accounts:");
+        customer.stream().filter(c -> c.getBalance() < 0).forEach(System.out::println);
+
 
 
     }

@@ -17,6 +17,7 @@ public class Customer {
         this.name =name;
     }
 
+    // Create constructor for easy obj init for testing
     Customer(int id, String name, List<AccountRecord> charges){
         this.id = id;
         this.name =name;
@@ -40,11 +41,10 @@ public class Customer {
     }
 
     public int getBalance() {
-        // sum up the charges in charges list
-        int balance =  0;
-        for(AccountRecord charge : charges) {
-            balance+= charge.getCharge();
-        }
+        // set a balance variable
+        int balance;
+        // Use stream and the mapToInt to sum up the integers of the List charges
+        balance = charges.stream().mapToInt(i -> i.getCharge()).sum();
         return balance;
     }
 
@@ -69,6 +69,6 @@ public class Customer {
     @Override
     public String toString() {
         //update this
-        return id + " " + name + " " + getBalance() ;
+        return "ID:"+ id + " Name:" + name + " Balance:" + getBalance() ;
     }
 }
