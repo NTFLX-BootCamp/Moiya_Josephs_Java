@@ -38,7 +38,7 @@ public class CustomerTest {
     // Sould display customer id, name and balance
     @Test
     public void shouldDisplayCustomerIDNameBalance(){
-        assertEquals("ID:1 Name:Wayne Balanace:123", customer.toString());
+        assertEquals("ID:1 Name:Wayne Balance:123", customer.toString());
     }
 
 
