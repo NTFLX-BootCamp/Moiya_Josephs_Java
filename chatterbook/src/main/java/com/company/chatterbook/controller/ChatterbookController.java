@@ -69,9 +69,9 @@ public class ChatterbookController {
 
         // A GET route implemented that returns a list of chatterPosts for a user by user name. 15 Points
         // http method : get
-        // url : /users/chatterposts/{name}
+        // url : /users/{name}/chatterposts
 
-        @RequestMapping(value="/users/chatterposts/{name}", method= RequestMethod.GET)
+        @RequestMapping(value="/users/{name}/chatterposts", method= RequestMethod.GET)
         public List<ChatterPost> getChatterPostsByUserName(@PathVariable String name) {
                 User selectedUser = null;
 
