@@ -16,7 +16,7 @@ SELECT first_name, last_name FROM employees WHERE last_name LIKE "W%";
 SELECT * FROM customers WHERE postal_code LIKE "55%";
 
 -- List all customers from zip codes that end with 0.
-SELECT * FROM customers WHERE postal_code LIKE "%55";
+SELECT * FROM customers WHERE postal_code LIKE "%0";
 
 -- List the first name, last name, and email for all customers with a ".org" email address.
 SELECT first_name, last_name, email FROM customers WHERE email LIKE "%\.org";
