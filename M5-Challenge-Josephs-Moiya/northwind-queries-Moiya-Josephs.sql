@@ -4,7 +4,7 @@ use northwind;
 SELECT category FROM products;
 
 -- What products are made by Dell?
-SELECT * FROM products WHERE product_name LIKE "Dell%";
+SELECT * FROM products WHERE product_name LIKE "%Dell%";
 
 -- List all the orders shipped to Pennsylvania.
 SELECT * FROM orders WHERE ship_state LIKE "Pennsylvania";
