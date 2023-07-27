@@ -10,6 +10,7 @@ import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class CustomerController {
     @Autowired
     CustomerRepository repo;
@@ -43,6 +44,7 @@ public class CustomerController {
 
 //
 //    A GET route that returns all customers for a specific state. 10 pts
+    @GetMapping("/customers/state/{state}")
     public List<Customer> getCustomersByState(@PathVariable String state){
         return repo.findByState(state);
     }
