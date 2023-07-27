@@ -29,6 +29,7 @@ public class CustomerControllerTests {
     @MockBean
     private CustomerRepository customerRepository;
 
+    // Testing GET /customers/
     @Test
     public void shouldReturnNewCustomerOnPostRequest() throws Exception {
         Customer customer = new Customer();
@@ -98,7 +99,7 @@ public class CustomerControllerTests {
         mockMvc.perform(delete("/customers/1")).andDo(print()).andExpect(status().isNoContent());
     }
 
-    // Testing GET record/{id}
+    // Testing GET /customer/{id}
     @Test
     public void shouldReturnCustomerById() throws Exception {
         Customer customer = new Customer();

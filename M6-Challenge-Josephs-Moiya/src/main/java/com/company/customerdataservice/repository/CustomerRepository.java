@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-
+    // Add find by state functionality
     List<Customer> findByState(String state);
 }
