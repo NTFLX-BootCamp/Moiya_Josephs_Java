@@ -53,8 +53,6 @@ public class CustomerRepositoryTests {
     public void getCustomerById() {
         //Arrange...
 
-        //Act...
-        //Arrange...
         Customer customer = new Customer();
         customer.setFirstName("M");
         customer.setLastName("J");
@@ -67,12 +65,41 @@ public class CustomerRepositoryTests {
         customer.setEmail("mj@email.com");
         customer.setState("NY");
         customer.setCustomer_id(1);
-        customerRepo.save(customer);
 
+        //Act...
+        customer = customerRepo.save(customer);
 
         //Assert...
         Optional<Customer> customer1 = customerRepo.findById(customer.getCustomer_id());
-        assertTrue(customer1.isPresent());
+
+        assertEquals(customer1.get(), customer);
+    }
+
+
+    @Test
+    public void getCustomersByState() {
+        //Arrange...
+
+        Customer customer = new Customer();
+        customer.setFirstName("M");
+        customer.setLastName("J");
+        customer.setPhone("712-999-1889");
+        customer.setCompany("BigCo");
+        customer.setAddress_1("123 Main St");
+        customer.setAddress_2("Apt 6");
+        customer.setCity("Bronx");
+        customer.setPostalCode(15500);
+        customer.setEmail("mj@email.com");
+        customer.setState("NY");
+        customer.setCustomer_id(1);
+
+        //Act...
+        customer = customerRepo.save(customer);
+
+        //Assert...
+        List<Customer> customer1 = customerRepo.findByState(customer.getState());
+
+        assertEquals(1, customer1.size());
     }
 
     @Test
