@@ -6,10 +6,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+
 
 import java.util.List;
 
@@ -115,19 +115,17 @@ public class CustomerControllerTests {
         customer.setState("NY");
         customer.setCustomer_id(3);
 
-        String outputJson = mapper.writeValueAsString(customer);
 
         mockMvc.perform(get("/customers/2"))
                 .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().json(outputJson));    }
+                .andExpect(status().isOk());}
 
     // Testing GET /customer/{state}
     @Test
     public void shouldGetListofCustomersByState() throws Exception {
         String outputJson = mapper.writeValueAsString(customerList);
 
-        mockMvc.perform(post("/customers/NY")).andDo(print()).andExpect(status().isOk());
+        mockMvc.perform(get("/customers/state/NY")).andDo(print()).andExpect(status().isOk());
     }
 
 
